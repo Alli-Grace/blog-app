@@ -89,7 +89,7 @@ DATABASES = {
     # "default": dj_database_url.parse(os.environ["DATABASE_URL"], conn_max_age=600)  
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": os.getenv('NAME'),
+        "NAME": os.getenv("NAME"),
         "USER": os.getenv("USER"),
         "PASSWORD": os.getenv("PASSWORD"),
         "HOST": os.getenv("HOST"),
