@@ -60,6 +60,15 @@ body{
     border-radius: 10px;
 }
 
+
+.para p{
+    text-align: center;
+}
+
+.para p a{
+    text-decoration: none;
+}
+
 /* =====================================
    Create Post / Edit Post / Login / Signup Page Styles 
 ========================================*/
@@ -338,23 +347,39 @@ Responsive Design/ Media Query
     .search-form input{
         width: 70%;
     } 
+    /* Phone styling */
+    body{
+        padding-top: 120px;
+    }
+    .nav-bar ul li{
+         /* display: block;  */
+        margin: 8px auto; 
+    }
+    .nav-bar ul li a{
+        font-size: 0.7rem;
+    }
+    .header a h1 {
+        font-size: 1.2rem;
+    }
 
 }
 
 @media screen and (max-length: 468px) {
+    body{
+        padding-top: 120px;
+    }
     .header a h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
     .post-header .title{
         font-size: 0.8rem;
     }
     .nav-bar ul li a{
-        font-size: 0.9rem;
-
+        font-size: 0.7rem;
     }
     .nav-bar ul li{
          /* display: block;  */
-        margin: 8px 5px; 
+        margin: 8px auto; 
     }
     .title{
         font-size: 1.2rem;

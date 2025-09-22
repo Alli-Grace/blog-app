@@ -2,10 +2,8 @@
 {% load static %}
 {% block content %}
 
+{% if user.is_authenticated %}
 <div class="form">
-    {% if not user.isauthenticated %}
-    <p>You have to be logged in to create a post. <a href="{% url 'login' %}">Login here</a></p>
-    {% else %}
     <h3>Create A New Post</h3>
     <form action="" method="POST">
         {% csrf_token %}
@@ -13,6 +11,11 @@
         <textarea name="body"></textarea>
         <button type="submit">Create Post</button>
     </form>
-    {% endif %}
 </div>
+{% else %}
+<div class="para">
+    <p>You have to be logged in to create a post. <a href="{% url 'login' %}">Login here</a></p>
+</div>
+{% endif %}
+
 {% endblock %}

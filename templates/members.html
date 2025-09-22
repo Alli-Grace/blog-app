@@ -1,10 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+        {% if user.is_authenticated %}
         <div class="wrapper">
-            {% if not user.isauthenticated %}
-            <p>You are not authorized to view this page. <a href="{% url 'login' %}">Login here</a></p>
-            {% else %}
             {% for member in members %}
             <div class="content">
                 <!-- <a href="#"> -->
@@ -12,6 +10,10 @@
                     <p class="date">Email: {{member.email}}</p>
             </div>
             {% endfor %}
-            {% endif %}
         </div>
+        {% else %}
+        <div class="para">
+            <p>You are not authorized to view this page. <a href="{% url 'login' %}">Login here</a></p>
+        </div>
+        {% endif %}
 {% endblock %}
