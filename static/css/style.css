@@ -11,7 +11,7 @@ body{
     background-color: rgb(237, 241, 241);
     /* background-color: red; */
     padding-bottom: 500px;
-    padding-top: 80px;  /*equal to or slightly larger than header height */
+    padding-top: 100px;  /*equal to or slightly larger than header height */
 
 }
 .header{
@@ -23,6 +23,8 @@ body{
     top: 0;
     right: 0;
     left: 0;
+    z-index: 1000;
+    /* max-height: 180px; */
     /* margin-bottom: 10%; */
 }
 .header a{
@@ -47,6 +49,7 @@ body{
     color: black;
     font-size: 1.2rem;
     font-weight: 600;
+    transition: color 0.5s ease-in-out;
 
 }
 .nav-bar ul li a:hover, 
@@ -110,6 +113,7 @@ body{
     color: #fff;
     cursor: pointer;
     width: 100%;
+    transition: color 0.5s ease-in-out;
     /* margin: 5%; */
 
 }
@@ -131,11 +135,10 @@ body{
    Index / Members Page Styles
 ======================== */
 .container{
-    margin-top: 10%;
+    margin-top: 3%;
 }
 .search-form{ 
     margin-left: 10px;
-
 }
 .search-form input{
     /* display: block; */
@@ -161,7 +164,6 @@ body{
 }
 .search-form button:hover{
     background-color: rgb(219, 218, 218); 
-
 }
 .content{
     margin: 10px;
@@ -214,6 +216,7 @@ Post Detail / Comment Page Styles
     border-radius: 5px;
     color: #fff;
     text-decoration: none;
+    transition: color 0.5s ease-in-out;
 }
 .action a:hover{
     background-color: rgb(28, 192, 28); 
@@ -225,6 +228,7 @@ Post Detail / Comment Page Styles
     border: none;
     border-radius: 5px;
     color: #fff;
+    transition: color 0.5s ease-in-out;
 }
 .action form button:hover{
     background-color: rgb(230, 76, 76);
@@ -301,6 +305,8 @@ Post Detail / Comment Page Styles
     padding: 7px 12px;
     border: none;
     color: #fff;
+    transition: color 0.5s ease-in-out;
+
 }
 .comment-form a:hover{
     background-color: rgb(28, 192, 28); 
@@ -316,14 +322,9 @@ Responsive Design/ Media Query
     
     .header {
         flex-direction: column;
-        /* justify-content: left; */
+        align-items: center;
         padding: 15px;
-    }
 
-    .nav-bar {
-        margin: 10px auto;
-        /* display: block; */
-        /* margin: 10px 0; */
     }
     
     .form,
@@ -337,26 +338,38 @@ Responsive Design/ Media Query
     .search-form input{
         width: 70%;
     } 
+
 }
 
 @media screen and (max-length: 468px) {
     .header a h1 {
         font-size: 1.5rem;
     }
-
-    .nav-bar ul li a {
-        font-size: 1rem;
+    .post-header .title{
+        font-size: 0.8rem;
     }
+    .nav-bar ul li a{
+        font-size: 0.9rem;
 
+    }
+    .nav-bar ul li{
+         /* display: block;  */
+        margin: 8px 5px; 
+    }
+    .title{
+        font-size: 1.2rem;
+    }
     .search-form input {
         width: 80%;
     }
-
     .form input, 
     .form textarea,
     .comment-form input,
     .comment-form textarea {
         font-size: 1rem;
+    }
+    .post-header .title{
+        font-size: 0.8rem;
     }
 }
 

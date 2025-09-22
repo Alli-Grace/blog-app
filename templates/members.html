@@ -2,6 +2,9 @@
 {% load static %}
 {% block content %}
         <div class="wrapper">
+            {% if not user.isauthenticated %}
+            <p>You are not authorized to view this page. <a href="{% url 'login' %}">Login here</a></p>
+            {% else %}
             {% for member in members %}
             <div class="content">
                 <!-- <a href="#"> -->
@@ -9,5 +12,6 @@
                     <p class="date">Email: {{member.email}}</p>
             </div>
             {% endfor %}
+            {% endif %}
         </div>
 {% endblock %}

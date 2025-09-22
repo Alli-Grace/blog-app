@@ -14,7 +14,9 @@ from pathlib import Path
 from dotenv import load_dotenv
 import dj_database_url
 import os
+
 load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -84,7 +86,16 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
-    "default": dj_database_url.parse(os.environ["DATABASE_URL"], conn_max_age=600)  
+    # "default": dj_database_url.parse(os.environ["DATABASE_URL"], conn_max_age=600)  
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": os.getenv('NAME'),
+        "USER": os.getenv("USER"),
+        "PASSWORD": os.getenv("PASSWORD"),
+        "HOST": os.getenv("HOST"),
+        "PORT": os.getenv("PORT"),
+        "OPTIONS": {"sslmode": "require"},
+    }
 
 }
 
